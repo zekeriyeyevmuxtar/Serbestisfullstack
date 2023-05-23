@@ -1,5 +1,7 @@
 from django.db import models
 
+class Categories(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Mehsul kataqorisi')
 
 class Mehsullar(models.Model):
     name = models.CharField(max_length=100, verbose_name='Mehsul adi')
