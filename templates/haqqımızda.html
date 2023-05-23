@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block menu %}
+
+<link rel="stylesheet" href="{% static 'about.css' %}">
+   
+   <div class="about-section">
+      <h1>HAQQIMIZDA</h1>
+      <p class="p1"> {{ about.about }} </p>
+      <h1>Missiyamız və Vizyonumuz</h1>
+      <p>{{ about.mission }}</p>
+    </div>
+
+    <h2 style="text-align:center">BIZIM KOMANDA</h2>
+    <div class="row">
+      {% for member in team %}
+      <div class="column">
+        <div class="card">
+          <img src="{{ member.image.url }}" alt="Muxar" style="width:40%">
+          <div class="container">
+            <h2>{{ member.name }}</h2>
+            <p class="title">{{ member.position }}</p>
+            <p>{{ member.detail }}</p>
+            <p>{{ member.email }}</p>
+            <p><button class="button">Əlaqə</button></p>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    
+
+
+    {% endblock %}

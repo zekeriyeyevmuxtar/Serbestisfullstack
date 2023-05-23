@@ -1,0 +1,39 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block menu %}
+<link rel="stylesheet" href="{% static 'Məhsullar.css' %}">
+    <div class="mehsullar"> 
+        <div class="row row-2">
+            
+            <select name="mehsullar" id="">
+                <option value="1">Dövrələr</option>
+                <option value="2">Dəstlər</option>
+                <option value="3">Qalxanlar</option>
+                <option value="4">Paketlər</option>
+                <option value="5">Arduino application</option>
+                <option value="6">Arduino book</option>
+                <option value="7">Arduino video</option>
+                
+            </select>
+        </div>
+    </div>  
+    <h2 style="text-align:center"><b>YENİ MƏHSULLAR</b></h2>
+<div class="general">
+
+    {% for prod in products %}
+<div class="card" >
+  <img src="{{ prod.image.url }}" alt="Arduino uno" style="width:100%">
+  <h1><b>{{ prod.name }}</b></h1>
+  <p class="price">{{ prod.cost }}$</p>
+  <p>{{ prod.desc }}</p>
+  <p><button>Səbətə əlavə et</button></p>
+</div>
+
+{% endfor %}
+
+
+</div>
+{% endblock %}

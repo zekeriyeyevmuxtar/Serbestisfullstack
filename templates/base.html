@@ -1,0 +1,32 @@
+
+{% load static %}
+<html lang="az">
+
+<head>
+    <title>RoboTman</title>
+   
+    
+    
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">RoboTman</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">ƏSAS</a></li>
+                    <li><a href="{% url 'about' %}">HAQQIMIZDA</a></li>
+                    <li><a href="#">SERVİZ</a></li>
+                    <li><a href="{% url 'products' %}">MƏHSULLAR</a></li>
+                    <li><a href="əlaqə.html">ƏLAQƏ</a></li>
+                </ul>
+            </div>
+
+        </div>
+{% block menu %}{% endblock menu %}
+</div>

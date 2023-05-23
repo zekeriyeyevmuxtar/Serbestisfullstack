@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block menu %}
+<link rel="stylesheet" href="{% static 'steal.css' %}">
+        <div class="content">
+            <h1>{{ home.title }}</h1>
+            <p class="par" >{{ home.text }}</p>
+
+            <button class="cn"><a href="#">BİZƏ QOŞULUN</a></button>
+
+            <div class="form">
+                <h2>ŞƏXSİ KABİNET</h2>
+                <input type="email" name="email" placeholder="Emalinizi daxil edin">
+                <input type="password" name="" placeholder="Şifrənizi daxil edin">
+                <button class="btnn"><a href="#">GİRİŞ</a></button>
+
+                <p class="link">Hesabınız yoxdursa<br>
+                    <a href="qeydiyyat.html">Qeydiyyatdan keçin</a> </a>
+                </p>
+                
+
+                
+
+            </div>
+        </div>
+    </div>
+    </div>
+   
+{% endblock %}
