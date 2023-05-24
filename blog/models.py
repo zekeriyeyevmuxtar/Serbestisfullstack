@@ -1,7 +1,10 @@
 from django.db import models
 
-class Categories(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Mehsul kataqorisi')
+    
+    def __str__(self):
+            return self.name
 
 class Mehsullar(models.Model):
     name = models.CharField(max_length=100, verbose_name='Mehsul adi')
@@ -9,8 +12,10 @@ class Mehsullar(models.Model):
     desc = models.CharField(max_length=100, verbose_name='Mehsul haqqinda')
     date = models.DateTimeField(auto_now_add=True)
     image = models.FileField(verbose_name="Sekil")
-    catagories= models.ForeignKey()
+    category= models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Mehsul kateqoriyasi', null=True)
 
+    def __str__(self):
+            return self.name
 
 class Home(models.Model):
     title = models.CharField(max_length=100, verbose_name='Basliq')
